@@ -4,38 +4,46 @@ using namespace std;
 
 int main() {
 	setlocale(LC_ALL, "");
-	
 
-	int pontok[15] = { 7, 34, 56, 4, 57, 45, 67, 6, 43, 32, 33, 99, 33, 100, 11 };
+	int scores[15] = { 7, 34, 56, 4, 57, 45, 67, 6, 43, 32, 33, 99, 33, 100, 11 };
 	int i = 0;
 	int sum=0;
 	float avrage = 0;
 	int max = 100;
 
-	//tömb kiírás
+	//print array
 
 	cout.setf(ios::left);
-	cout << "Tanulók pontjai\n\n";
+	cout << "Students scores\n\n";
 	for (i = 0; i < 15; i++) {
-		cout << setw(2) << i + 1 << setw(6) << ". elem: " << setw(2) << pontok[i] << endl;
+		cout << setw(2) << i + 1 << setw(6) << ". student: " << setw(2) << scores[i] << endl;
 	}
 
-	//átlag 
+	//avrage 
 
 	for (i = 0; i < 15; i++) {
-		sum += pontok[i];
+		sum += scores[i];
 	}
 	avrage = (float)sum / 15;
 	cout << "\n";
-	cout <<"A pontok átlaga: " << avrage << endl;
+	cout <<"The avrage of points: " << avrage << endl;
 
-	//max pont
+	//max score
 	cout << "\n";
 	for (i = 0; i < 15; i++) {
-		if (pontok[i] == max) {
-			cout << "Max pontot elért: " << i + 1 << ". hallgató" << endl;
+		if (scores[i] == max) {
+			cout << "Achieved max score: " << i + 1 << ". student" << endl;
 		}
 	}
+
+	//achieved exactly 57 points
+	cout << "\n";
+	for (i = 0; i < 15; i++) {
+		if (scores[i] == 57) {
+			cout << "Achieved 57 points: " << i + 1 << ". student" << endl;
+		}
+	}
+
 
 	system("pause");
 	return 0;
